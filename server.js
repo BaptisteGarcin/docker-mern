@@ -2,14 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const DOCKER_DB = process.env.DB_PORT;
-const MONGO_DB = DOCKER_DB
-  ? DOCKER_DB.replace( 'tcp', 'mongodb' ) + '/srv/express-mongo'
-  : process.env.MONGODB;
+const DOCKER_DB = process.env.MONGO_DB;
 const app = express();
-const retry = 0;
 
-mongoose.connect(MONGO_DB);
+mongoose.connect('mongodb://db:27017/express-mongo');
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
