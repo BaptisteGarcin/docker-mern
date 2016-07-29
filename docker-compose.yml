@@ -1,17 +1,17 @@
-db:
-  image: mongo
-  ports:
-    - "27017:27017"
-  command: "--smallfiles --logpath=/dev/null"
-web:
-  build: .
-  command: node server.js
-  volumes:
-    - .:/srv/express-mongo
-    - /srv/express-mongo/node_modules
-  ports:
-    - "3000:3000"
-  links:
-    - db
-  environment:
-    PORT: 3000
+version: '2'
+services:
+  db:
+    image: mongo
+    command: "--smallfiles --logpath=/dev/null"
+  web:
+    build: .
+    command: node server.js
+    volumes:
+      - .:/srv/express-mongo
+      - /srv/express-mongo/node_modules
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    environment:
+      PORT: 3000
