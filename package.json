@@ -1,6 +1,6 @@
 {
-  "name": "express-mongo",
-  "description": "A demo app illustrating the usage of express, mongoose, passportjs, swig and other modules in nodejs",
+  "name": "docker-express-mongo",
+  "description": "A Dockerized Express/Mongo starter project",
   "version": "1.0.0",
   "license": "MIT",
   "engines": {
