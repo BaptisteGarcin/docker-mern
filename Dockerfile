@@ -6,5 +6,6 @@ RUN mkdir -p /srv/express-mongo
 ADD ./package.json /srv/express-mongo/package.json
 WORKDIR /srv/express-mongo
 
-RUN npm install
-ADD . /srv/express-mongo
+RUN npm install nodemon -g && npm install
+
+EXPOSE 3000
