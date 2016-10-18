@@ -13,7 +13,7 @@ services:
       - /srv/express-mongo/node_modules
     ports:
       - 3000:3000
-    links:
+    depends_on:
       - db
     environment:
       PORT: 3000
@@ -21,7 +21,7 @@ services:
     image: mongo-express
     ports:
       - 8081:8081
-    links:
+    depends_on:
       - db
     environment:
       ME_CONFIG_MONGODB_SERVER: 'db'
