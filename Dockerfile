@@ -9,6 +9,6 @@ WORKDIR /srv/express-mongo
 RUN chown -R node:www-data /usr/local /srv/express-mongo
 USER node
 
-RUN set -xe && npm install nodemon webpack -g && npm install
+RUN set -xe && npm install webpack -g && npm install
 
 EXPOSE 3000
