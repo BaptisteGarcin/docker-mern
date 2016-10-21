@@ -14,7 +14,6 @@ mongoose.connect('mongodb://db:27017/express-mongo');
 mongoose.Promise = global.Promise;
 
 const app = express();
-const compiler = webpack(config);
 const DEV = process.env.NODE_ENV !== 'production';
 
 app.use(bodyParser.urlencoded({'extended': 'true'}));
