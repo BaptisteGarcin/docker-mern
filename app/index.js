@@ -9,7 +9,10 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const config = require('../webpack.config.js');
 const routes = require('./server/routes.js');
+
 mongoose.connect('mongodb://db:27017/express-mongo');
+mongoose.Promise = global.Promise;
+
 const app = express();
 const compiler = webpack(config);
 const DEV = process.env.NODE_ENV !== 'production';
